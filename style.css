@@ -1,0 +1,304 @@
+:root{
+    --primary: #e95420;
+    --bg: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: white;
+    min-height: 2000px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid var(--primary);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .judul{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #E95420;
+    font-style: italic;
+}
+
+.navbar .judul span{
+    color: #ff0400;
+}
+
+.navbar .navbar-nav a{
+    color: var(--primary);
+    display: inline-block;
+    font-size: 1.4rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover{
+    color: #ff0400;
+}
+
+.navbar .navbar-nav a::after{
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem 8px;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after{
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a{
+    color: #000000;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover{
+    color: var(--primary);
+}
+
+#hamburger-menu{
+    display: none;
+}
+
+.hero .content h2{
+    color: var(--primary);
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('img/Untitled.png');
+    background-repeat: no-repeat;
+    color: #000000;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hero .content{
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .content h1{
+    font-size: 5em;
+    line-height: 1.2;
+}
+
+.hero .content p{
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+}
+
+.about{
+    padding: 7rem 7% 1.4rem;
+    color: #000000;
+}
+
+.about h2{
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 4rem;
+}
+
+.about .row{
+    display: flex;
+}
+
+.about .row .about-img{
+    flex: 1 1 45rem;
+}
+
+.about .row .about-img img{
+    width: 100%;
+}
+
+.about .row .content{
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.about .row .content h3{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about .row .content p{
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 100;
+    line-height: 1.6;
+}
+
+.project{
+    padding: 15rem 7% 1.4rem;
+    color: #000000;
+    margin-bottom: 10rem;
+}
+
+.project h2{
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 4rem;
+}
+
+.project p{
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1.6;
+}
+
+.project .row{
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 5rem;
+    justify-content: center;
+}
+
+.project .row .my-pro{
+    text-align: center;
+}
+
+.project .row .my-pro img{
+    border-radius: 5%;
+    width: 30%;
+}
+
+footer {
+    background-color: var(--primary);
+    text-align: center;
+    padding: 0.5rem 0 1rem;
+    margin-top: 2rem;
+}
+
+footer .social{
+    padding: 1rem 0;
+}
+
+footer .social a{
+    color: white;
+    margin: 1rem;
+}
+
+footer .social a:hover{
+    color: var(--bg);
+}
+
+footer .links{
+    margin-bottom: 1.4rem;
+}
+
+footer .links a{
+    color: white;
+    padding: 0.7rem 1rem;
+}
+
+footer .credit{
+    font-size: 0.8rem;
+}
+
+footer .credit a{
+    color: var(--bg);
+    font-weight: 700;
+}
+
+/*media queries */
+
+/* laptop */
+@media (max-width: 1366px){
+    html {
+        font-size: 75%;
+    }
+}
+
+/*tablet */
+@media (max-width: 768px){
+    html {
+        font-size: 62.5%;
+    }
+    #hamburger-menu{
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: wheat;
+        width: 38rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active{
+        right: 0;
+    }
+    .navbar .navbar-nav a{
+        color: var(--primary);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after{
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover::after{
+        transform: scaleX(0.2);
+    }
+
+    .about .row {
+        flex-wrap: wrap;
+    }
+
+    .about .row .content{
+        padding: 0;
+    }
+
+    .about .row .content h3{
+        margin-top: 1rem;
+        font-size: 1.6rem;
+    }
+    
+}
+
+/*mobile */
+@media (max-width: 450px){
+    html {
+        font-size: 55%;
+    }
+}
